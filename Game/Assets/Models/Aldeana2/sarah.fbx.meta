@@ -3,7 +3,22 @@ guid: 373fa64654ccebb48b34d5ef609b8778
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: body-parts-albedo
+    second: {fileID: 2800000, guid: 6452de0e12ae97345abdb2d950f586e8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: clothes-texture
+    second: {fileID: 2800000, guid: 1e14e7e88faf94846b643aec224bae5d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: skin
+    second: {fileID: 2800000, guid: a7221345aeafedb48a5f40424753e3db, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
