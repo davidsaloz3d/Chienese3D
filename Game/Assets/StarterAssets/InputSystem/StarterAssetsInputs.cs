@@ -12,6 +12,8 @@ namespace StarterAssets
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
+		public bool shot;
+		public bool golpe;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -19,6 +21,7 @@ namespace StarterAssets
 		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
+		public bool disableMovement = false;
 
 #if ENABLE_INPUT_SYSTEM
 		public void OnMove(InputValue value)
@@ -43,6 +46,14 @@ namespace StarterAssets
 		{
 			SprintInput(value.isPressed);
 		}
+
+		public void OnShot(InputValue value){
+			ShotInput(value.isPressed);
+		}
+
+		public void OnGolpe(InputValue value){
+			GolpeInput(value.isPressed);
+		}
 #endif
 
 
@@ -64,6 +75,20 @@ namespace StarterAssets
 		public void SprintInput(bool newSprintState)
 		{
 			sprint = newSprintState;
+		}
+
+		public void ShotInput(bool newShotInput){
+			if(newShotInput){
+				shot = !shot;
+				disableMovement = shot;
+			}
+		}
+
+		public void GolpeInput(bool newGolpeInput){
+			if(newGolpeInput){
+				golpe = !golpe;
+				disableMovement = golpe;
+			}
 		}
 
 		private void OnApplicationFocus(bool hasFocus)
