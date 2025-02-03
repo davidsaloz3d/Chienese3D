@@ -3031,7 +3031,7 @@ GameObject:
   - component: {fileID: 446979967}
   - component: {fileID: 446979966}
   m_Layer: 0
-  m_Name: A2
+  m_Name: Antonio P
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8952,7 +8952,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 373fa64654ccebb48b34d5ef609b8778, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1772007924}
   m_SourcePrefab: {fileID: 100100000, guid: 373fa64654ccebb48b34d5ef609b8778, type: 3}
 --- !u!4 &1239390487 stripped
 Transform:
@@ -11408,7 +11411,7 @@ GameObject:
   - component: {fileID: 1590071380}
   - component: {fileID: 1590071379}
   m_Layer: 0
-  m_Name: A1
+  m_Name: Luis P
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12627,7 +12630,7 @@ GameObject:
   - component: {fileID: 1702306017}
   - component: {fileID: 1702306016}
   m_Layer: 0
-  m_Name: A4
+  m_Name: Sarah P
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12653,9 +12656,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 21.475601
-  m_Height: 183.08563
+  m_Height: 184.35669
   m_Direction: 1
-  m_Center: {x: 0.21095276, y: 88.63144, z: 2.2514343}
+  m_Center: {x: 0.21095276, y: 87.99591, z: 2.2514343}
 --- !u!54 &1702306017
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12931,6 +12934,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c96f5c02dfe0fe54d8d788f49205c119, type: 3}
+--- !u!1 &1772007923 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 373fa64654ccebb48b34d5ef609b8778, type: 3}
+  m_PrefabInstance: {fileID: 1239390486}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1772007924
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772007923}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 373fa64654ccebb48b34d5ef609b8778, type: 3}
+  m_Controller: {fileID: 9100000, guid: bf3c2eab6fee3814d9140cbf8feeadb8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1774210848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15684,7 +15714,7 @@ GameObject:
   - component: {fileID: 2124712120}
   - component: {fileID: 2124712119}
   m_Layer: 0
-  m_Name: A3
+  m_Name: Lucia P
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
