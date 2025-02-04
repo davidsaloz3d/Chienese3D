@@ -219,7 +219,8 @@ namespace StarterAssets
 
         private void Move()
         {
-            if(_animator.GetCurrentAnimatorStateInfo(0).IsName("Disparrow") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Golpe")){
+            if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Disparrow") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Golpe") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Hurt"))
+            {
                 _speed = 0f;
                 return;
             }
@@ -383,6 +384,18 @@ namespace StarterAssets
                 }
 
             }
+        }
+
+        public void TakeDamage()
+        {
+            _animator.SetTrigger("Hurt"); // "Hit" es el nombre del estado en el Animator
+        }
+
+        public void Die()
+        {
+            _animator.SetTrigger("Death"); // Activa la animación de muerte
+            _controller.enabled = false; // Desactiva el CharacterController (para que no se mueva)
+            this.enabled = false; // Desactiva este script
         }
 
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)

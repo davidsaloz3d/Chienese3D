@@ -6,6 +6,8 @@ TagManager:
   tags:
   - lava
   - cura
+  - CinemachineTarget
+  - Espadazo
   layers:
   - Default
   - TransparentFX

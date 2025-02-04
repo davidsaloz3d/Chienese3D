@@ -3,7 +3,117 @@ guid: 49995828c842d24469a09e2bdeb5f7b0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MoonSword4_Albedo
+    second: {fileID: 2800000, guid: ace37a8e332fdc64d8201f9baadbd97d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MoonSword4_MetallicSmoothness
+    second: {fileID: 2800000, guid: d5ffebadc2cd19b4886c6c1ec3797ab2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MoonSword4_Normal
+    second: {fileID: 2800000, guid: 81c900f9db906454781b6cd869773ca3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MoonSword5_Emission
+    second: {fileID: 2800000, guid: 7feebd5a465f50340acc53ed7e1a0bf2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: shield_low_new_DefaultMaterial_AlbedoTransparency
+    second: {fileID: 2800000, guid: 2dba838c26ae2c94f95797bde3454cc6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: shield_low_new_DefaultMaterial_Normal
+    second: {fileID: 2800000, guid: 8e0e54bc4d9e5c344b9b31ca17fab239, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: shield_low_new_DefaultMaterial_SpecularSmoothness
+    second: {fileID: 2800000, guid: 9acd9a2be18c9664cb807c1a61d6fb10, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: warrior_Body_diffuse
+    second: {fileID: 2800000, guid: 670bc0a2e8eb6984ebba6a5945627b42, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: warrior_Body_normal
+    second: {fileID: 2800000, guid: e5c5a5c57be793941a04015fcd95a203, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: warrior_Body_specular
+    second: {fileID: 2800000, guid: 4f19735ef6b0d5d42b5ce2cded853b4e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: warrior_Bottom_diffuse
+    second: {fileID: 2800000, guid: 6b26a5984b68ea648afce05fd5c3fd87, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: warrior_Bottom_normal
+    second: {fileID: 2800000, guid: a781c7074a8314649ad53424d676ddd6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: warrior_Bottom_specular
+    second: {fileID: 2800000, guid: 45bf1a1fc8e711245b59436a5b7d839f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: warrior_Hat_diffuse
+    second: {fileID: 2800000, guid: 25d3bbc2b728fae439698e2fc6cb1f94, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: warrior_Hat_normal
+    second: {fileID: 2800000, guid: 41f1ff88ff2a7b645a8e2a5b828954f9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: warrior_Hat_specular
+    second: {fileID: 2800000, guid: d123d06655915364eacdd43963e9ae17, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: warrior_Shoes_diffuse
+    second: {fileID: 2800000, guid: 496337863ae908249a4fddb643a0569f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: warrior_Shoes_normal
+    second: {fileID: 2800000, guid: bb84965423b4bf94a91a45a99e204f4e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: warrior_Shoes_specular
+    second: {fileID: 2800000, guid: a8255e9bf256c3e43a2332d5ed78e257, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: warrior_Top_diffuse
+    second: {fileID: 2800000, guid: 1c83cdb577a4e48458303d6ffcaf29b9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: warrior_Top_normal
+    second: {fileID: 2800000, guid: 0696664ab76462b4f8adc4da26f4a1de, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: warrior_Top_specular
+    second: {fileID: 2800000, guid: 5e868f9c6a337a64cb5f947e5e8118cd, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -22,7 +132,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -91,13 +201,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
