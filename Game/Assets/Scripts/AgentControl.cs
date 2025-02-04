@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -88,4 +89,11 @@ public class AgentControl : MonoBehaviour
         Debug.Log("Desactivado");
         espada.enabled = false;
     }
+
+   void OnTriggerEnter(Collider other){
+        if (other.CompareTag("Flecha")){
+            anim.SetBool("Morido", true);
+            agent.isStopped = true;
+        }
+   }
 }
