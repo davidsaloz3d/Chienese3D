@@ -6,6 +6,8 @@ public class AgentControl : MonoBehaviour
 {
     NavMeshAgent agent;
 
+    public bool HaMuerto = false;
+
     [SerializeField] GameObject[] path;
     int goal = 0;
 
@@ -21,6 +23,8 @@ public class AgentControl : MonoBehaviour
     private float lastAttackTime = 0f;
 
     [SerializeField] Collider espada;
+    public static float health = 100;
+    [SerializeField] float dps = 20;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,49 +36,52 @@ public class AgentControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        distance = Vector3.Distance(transform.position, player.transform.position);
-        if (distance < visionArea && !PlayerHealth.isDead)
+        if (!HaMuerto)
         {
-            agent.destination = player.transform.position;
-            anim.SetBool("Run", true);
-            follow = true;
-            agent.speed = 3.5f;
-            if (distance < AttackArea)
+            distance = Vector3.Distance(transform.position, player.transform.position);
+            if (distance < visionArea && !PlayerHealth.isDead)
             {
-                if (Time.time >= lastAttackTime + attackCooldown) // Solo ataca si ha pasado el cooldown
+                agent.destination = player.transform.position;
+                anim.SetBool("Run", true);
+                follow = true;
+                agent.speed = 3.5f;
+                if (distance < AttackArea)
                 {
-                    anim.SetBool("Attack", true);
-                    agent.isStopped = true; // Se queda quieto al atacar
-                    lastAttackTime = Time.time;
-                    Invoke("ActivaCollider", 0.2f);
+                    if (Time.time >= lastAttackTime + attackCooldown) // Solo ataca si ha pasado el cooldown
+                    {
+                        anim.SetBool("Attack", true);
+                        agent.isStopped = true; // Se queda quieto al atacar
+                        lastAttackTime = Time.time;
+                        Invoke("ActivaCollider", 0.2f);
+                    }
+                }
+                else
+                {
+                    agent.isStopped = false;
+                    anim.SetBool("Attack", false);
                 }
             }
             else
             {
+
                 agent.isStopped = false;
+                agent.destination = path[goal].transform.position;
+                anim.SetBool("Run", false);
                 anim.SetBool("Attack", false);
+                follow = false;
+                agent.speed = 1f;
             }
-        }
-        else
-        {
-            
-            agent.isStopped = false;
-            agent.destination = path[goal].transform.position;
-            anim.SetBool("Run", false);
-            anim.SetBool("Attack", false);
-            follow = false;
-            agent.speed = 1f;
-        }
-        if (agent.remainingDistance < 1 && !follow)
-        {
-            goal++;
-            if (goal == path.Length)
+            if (agent.remainingDistance < 1 && !follow)
             {
-                goal = 0;
+                goal++;
+                if (goal == path.Length)
+                {
+                    goal = 0;
+                }
+                agent.destination = path[goal].transform.position;
             }
-            agent.destination = path[goal].transform.position;
         }
+
     }
 
     void ActivaCollider()
@@ -90,10 +97,26 @@ public class AgentControl : MonoBehaviour
         espada.enabled = false;
     }
 
-   void OnTriggerEnter(Collider other){
-        if (other.CompareTag("Flecha")){
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Flecha"))
+        {
             anim.SetBool("Morido", true);
             agent.isStopped = true;
+            HaMuerto = true;
         }
-   }
+        if (other.CompareTag("Arco"))
+        {
+            anim.SetTrigger("Auch");
+            agent.isStopped = true;
+            health = health - dps;
+
+            if (health <= 0)
+            {
+                anim.SetBool("Morido", true);
+                agent.isStopped = true;
+                HaMuerto = true;
+            }
+        }
+    }
 }
