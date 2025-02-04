@@ -8,6 +8,8 @@ TagManager:
   - cura
   - CinemachineTarget
   - Espadazo
+  - Arco
+  - Flecha
   layers:
   - Default
   - TransparentFX

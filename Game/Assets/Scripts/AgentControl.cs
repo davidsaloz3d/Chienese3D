@@ -13,11 +13,13 @@ public class AgentControl : MonoBehaviour
     [SerializeField] Animator anim;
 
     [SerializeField] float visionArea = 10;
-    [SerializeField] float AttackArea = 3;
+    [SerializeField] float AttackArea = 2.5f;
     float distance;
     bool follow = false;
     [SerializeField] float attackCooldown = 2f; // Tiempo de espera entre ataques
     private float lastAttackTime = 0f;
+
+    [SerializeField] Collider espada;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -44,16 +46,19 @@ public class AgentControl : MonoBehaviour
                     anim.SetBool("Attack", true);
                     agent.isStopped = true; // Se queda quieto al atacar
                     lastAttackTime = Time.time;
+                    Invoke("ActivaCollider", 0.2f);
                 }
             }
             else
             {
-                anim.SetBool("Attack", false);
                 agent.isStopped = false;
+                anim.SetBool("Attack", false);
             }
         }
         else
         {
+            
+            agent.isStopped = false;
             agent.destination = path[goal].transform.position;
             anim.SetBool("Run", false);
             anim.SetBool("Attack", false);
@@ -69,5 +74,18 @@ public class AgentControl : MonoBehaviour
             }
             agent.destination = path[goal].transform.position;
         }
+    }
+
+    void ActivaCollider()
+    {
+        Debug.Log("Activado");
+        espada.enabled = true;
+        Invoke("DesactivaCollider", 1.4f);
+    }
+
+    void DesactivaCollider()
+    {
+        Debug.Log("Desactivado");
+        espada.enabled = false;
     }
 }

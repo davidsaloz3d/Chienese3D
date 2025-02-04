@@ -9,14 +9,20 @@ public class ProyecControl : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>(); 
-
-        rb.AddForce(transform.TransformDirection(Vector3.forward) * power, ForceMode.Impulse);
-
-        Invoke("BorrarBolas", 2);
+        rb.useGravity = false;
+        Invoke("Disparo", 0.4f);
+        
     }
 
     void BorrarBolas(){
         Destroy(gameObject);
+    }
+
+    void Disparo(){
+        rb.useGravity = true;
+        rb.AddForce(transform.TransformDirection(Vector3.forward) * power, ForceMode.Impulse);
+
+        Invoke("BorrarBolas", 2);
     }
 
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] Slider barraSalud;
-    public float health = 100;
+    public static float health = 100;
     [SerializeField] float dps = 20;
     public static bool isDead;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
