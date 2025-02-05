@@ -28,6 +28,8 @@ public class AgentControl : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
+            
         agent = GetComponent<NavMeshAgent>();
 
         agent.destination = path[goal].transform.position;
@@ -52,7 +54,6 @@ public class AgentControl : MonoBehaviour
                         anim.SetBool("Attack", true);
                         agent.isStopped = true; // Se queda quieto al atacar
                         lastAttackTime = Time.time;
-                        Invoke("ActivaCollider", 0.2f);
                     }
                 }
                 else
@@ -86,14 +87,11 @@ public class AgentControl : MonoBehaviour
 
     void ActivaCollider()
     {
-        Debug.Log("Activado");
         espada.enabled = true;
-        Invoke("DesactivaCollider", 1.4f);
     }
 
     void DesactivaCollider()
     {
-        Debug.Log("Desactivado");
         espada.enabled = false;
     }
 
@@ -104,9 +102,11 @@ public class AgentControl : MonoBehaviour
             anim.SetBool("Morido", true);
             agent.isStopped = true;
             HaMuerto = true;
+            Destroy(other.gameObject);
         }
         if (other.CompareTag("Arco"))
         {
+            Debug.Log("eei");
             anim.SetTrigger("Auch");
             agent.isStopped = true;
             health = health - dps;
