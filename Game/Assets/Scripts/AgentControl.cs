@@ -7,6 +7,7 @@ public class AgentControl : MonoBehaviour
     NavMeshAgent agent;
 
     public bool HaMuerto = false;
+    public bool Damago = false;
 
     [SerializeField] GameObject[] path;
     int goal = 0;
@@ -24,12 +25,12 @@ public class AgentControl : MonoBehaviour
 
     [SerializeField] Collider espada;
     public static float health = 100;
-    [SerializeField] float dps = 20;
+    [SerializeField] float dps = 50;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-            
+
+
         agent = GetComponent<NavMeshAgent>();
 
         agent.destination = path[goal].transform.position;
@@ -40,46 +41,51 @@ public class AgentControl : MonoBehaviour
     {
         if (!HaMuerto)
         {
-            distance = Vector3.Distance(transform.position, player.transform.position);
-            if (distance < visionArea && !PlayerHealth.isDead)
+            if (!Damago)
             {
-                agent.destination = player.transform.position;
-                anim.SetBool("Run", true);
-                follow = true;
-                agent.speed = 3.5f;
-                if (distance < AttackArea)
+
+
+                distance = Vector3.Distance(transform.position, player.transform.position);
+                if (distance < visionArea && !PlayerHealth.isDead)
                 {
-                    if (Time.time >= lastAttackTime + attackCooldown) // Solo ataca si ha pasado el cooldown
+                    agent.destination = player.transform.position;
+                    anim.SetBool("Run", true);
+                    follow = true;
+                    agent.speed = 3.5f;
+                    if (distance < AttackArea)
                     {
-                        anim.SetBool("Attack", true);
-                        agent.isStopped = true; // Se queda quieto al atacar
-                        lastAttackTime = Time.time;
+                        if (Time.time >= lastAttackTime + attackCooldown) // Solo ataca si ha pasado el cooldown
+                        {
+                            anim.SetBool("Attack", true);
+                            agent.isStopped = true; // Se queda quieto al atacar
+                            lastAttackTime = Time.time;
+                        }
+                    }
+                    else
+                    {
+                        agent.isStopped = false;
+                        anim.SetBool("Attack", false);
                     }
                 }
                 else
                 {
-                    agent.isStopped = false;
-                    anim.SetBool("Attack", false);
-                }
-            }
-            else
-            {
 
-                agent.isStopped = false;
-                agent.destination = path[goal].transform.position;
-                anim.SetBool("Run", false);
-                anim.SetBool("Attack", false);
-                follow = false;
-                agent.speed = 1f;
-            }
-            if (agent.remainingDistance < 1 && !follow)
-            {
-                goal++;
-                if (goal == path.Length)
-                {
-                    goal = 0;
+                    agent.isStopped = false;
+                    agent.destination = path[goal].transform.position;
+                    anim.SetBool("Run", false);
+                    anim.SetBool("Attack", false);
+                    follow = false;
+                    agent.speed = 1f;
                 }
-                agent.destination = path[goal].transform.position;
+                if (agent.remainingDistance < 1 && !follow)
+                {
+                    goal++;
+                    if (goal == path.Length)
+                    {
+                        goal = 0;
+                    }
+                    agent.destination = path[goal].transform.position;
+                }
             }
         }
 
@@ -99,17 +105,11 @@ public class AgentControl : MonoBehaviour
     {
         if (other.CompareTag("Flecha"))
         {
-            anim.SetBool("Morido", true);
-            agent.isStopped = true;
-            HaMuerto = true;
-            Destroy(other.gameObject);
-        }
-        if (other.CompareTag("Arco"))
-        {
-            Debug.Log("eei");
             anim.SetTrigger("Auch");
             agent.isStopped = true;
             health = health - dps;
+            Damago = true;
+            Invoke("Vuelta", 1);
 
             if (health <= 0)
             {
@@ -117,6 +117,12 @@ public class AgentControl : MonoBehaviour
                 agent.isStopped = true;
                 HaMuerto = true;
             }
+            Destroy(other.gameObject);
         }
+    }
+
+    void Vuelta()
+    {
+        Damago = false;
     }
 }

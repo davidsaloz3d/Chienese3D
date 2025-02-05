@@ -98,7 +98,6 @@ namespace StarterAssets
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
         private int _animIDShot;
-        private int _animIDGolpe;
 
 #if ENABLE_INPUT_SYSTEM 
         private PlayerInput _playerInput;
@@ -162,7 +161,6 @@ namespace StarterAssets
             GroundedCheck();
             Move();
             Shot();
-            Golpe();
         }
 
         private void LateUpdate()
@@ -178,7 +176,6 @@ namespace StarterAssets
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
             _animIDShot = Animator.StringToHash("Shot");
-            _animIDGolpe = Animator.StringToHash("Golpe");
         }
 
         private void GroundedCheck()
@@ -219,7 +216,7 @@ namespace StarterAssets
 
         private void Move()
         {
-            if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Disparrow") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Golpe") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Hurt"))
+            if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Disparrow") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Hurt"))
             {
                 _speed = 0f;
                 return;
@@ -373,18 +370,8 @@ namespace StarterAssets
             }
         }
 
-        public void Golpe()
-        {
-            if (_hasAnimator)
-            {
-                if (_input.golpe)
-                {
-                    _animator.SetTrigger(_animIDGolpe);
-                    _input.golpe = false;
-                }
+        
 
-            }
-        }
 
         public void TakeDamage()
         {

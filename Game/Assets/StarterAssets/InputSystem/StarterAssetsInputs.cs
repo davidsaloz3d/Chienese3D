@@ -13,7 +13,6 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 		public bool shot;
-		public bool golpe;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -51,9 +50,7 @@ namespace StarterAssets
 			ShotInput(value.isPressed);
 		}
 
-		public void OnGolpe(InputValue value){
-			GolpeInput(value.isPressed);
-		}
+
 #endif
 
 
@@ -84,12 +81,7 @@ namespace StarterAssets
 			}
 		}
 
-		public void GolpeInput(bool newGolpeInput){
-			if(newGolpeInput){
-				golpe = !golpe;
-				disableMovement = golpe;
-			}
-		}
+
 
 		private void OnApplicationFocus(bool hasFocus)
 		{
