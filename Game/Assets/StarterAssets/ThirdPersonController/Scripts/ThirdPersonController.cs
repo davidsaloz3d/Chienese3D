@@ -98,6 +98,7 @@ namespace StarterAssets
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
         private int _animIDShot;
+        private int _animIDDrink;
 
 #if ENABLE_INPUT_SYSTEM 
         private PlayerInput _playerInput;
@@ -161,6 +162,7 @@ namespace StarterAssets
             GroundedCheck();
             Move();
             Shot();
+            Drink();
         }
 
         private void LateUpdate()
@@ -176,6 +178,7 @@ namespace StarterAssets
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
             _animIDShot = Animator.StringToHash("Shot");
+            _animIDDrink = Animator.StringToHash("Drink");
         }
 
         private void GroundedCheck()
@@ -216,7 +219,7 @@ namespace StarterAssets
 
         private void Move()
         {
-            if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Disparrow") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Hurt"))
+            if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Disparrow") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Beber") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Hurt"))
             {
                 _speed = 0f;
                 return;
@@ -365,6 +368,22 @@ namespace StarterAssets
                 {
                     _animator.SetTrigger(_animIDShot);
                     _input.shot = false;
+                }
+
+            }
+        }
+
+        public void Drink()
+        {
+            if (_hasAnimator)
+            {
+                if (_input.drink)
+                {
+                    if(Invisible.bebiendo){
+                        _animator.SetTrigger(_animIDDrink);
+                        _input.drink = false;
+                    }
+                   
                 }
 
             }

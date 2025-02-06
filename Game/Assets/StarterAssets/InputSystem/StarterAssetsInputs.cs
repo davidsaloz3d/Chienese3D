@@ -13,6 +13,7 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 		public bool shot;
+		public bool drink;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -50,6 +51,10 @@ namespace StarterAssets
 			ShotInput(value.isPressed);
 		}
 
+		public void OnDrink(InputValue value){
+			DrinkInput(value.isPressed);
+		}
+
 
 #endif
 
@@ -78,6 +83,13 @@ namespace StarterAssets
 			if(newShotInput){
 				shot = !shot;
 				disableMovement = shot;
+			}
+		}
+
+		public void DrinkInput(bool newDrinkInput){
+			if(newDrinkInput){
+				drink = !drink;
+				disableMovement = drink;
 			}
 		}
 
