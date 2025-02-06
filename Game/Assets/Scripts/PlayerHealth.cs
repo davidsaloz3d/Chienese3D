@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public static float health = 100;
     [SerializeField] float dps = 20;
     public static bool isDead;
+    [SerializeField] float cura = 20;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,6 +40,14 @@ public class PlayerHealth : MonoBehaviour
                     controller.Die();
                 }
             }
+        }
+        if(other.gameObject.tag == "cura" && health < 100){
+            health += cura;
+            if(health > 100){
+                health = 100;
+            }
+            barraSalud.value = health;
+            Destroy(other.gameObject);
         }
     }
 

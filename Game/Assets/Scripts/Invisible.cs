@@ -1,6 +1,8 @@
 using System;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Invisible : MonoBehaviour
 {
@@ -8,6 +10,9 @@ public class Invisible : MonoBehaviour
     public static int botellas = 0;
     public static bool invisible = false;
     private float tiempoRestante = 0f;
+    [SerializeField] Slider tiempoPocion;
+    [SerializeField] TMP_Text botellasN;
+    [SerializeField] GameObject panel;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,17 +29,21 @@ public class Invisible : MonoBehaviour
                 bebiendo = true;
                 invisible = true;
                 botellas--;
-                tiempoRestante = 10f;
+                botellasN.text = "x" + botellas;
+                tiempoRestante = 15f;
                 Invoke("NoBebe", 1f);
                 Debug.Log("Bebiendo");
             }
         }
 
         if(invisible){
+            panel.SetActive(true);
+            tiempoPocion.value = tiempoRestante;
             tiempoRestante -= Time.deltaTime;
             if (tiempoRestante <= 0)
             {
                 invisible = false;
+                panel.SetActive(false);
             }
             Debug.Log("Invisible" + tiempoRestante);
         }
@@ -48,6 +57,7 @@ public class Invisible : MonoBehaviour
     void OnTriggerEnter(Collider other){
         if(other.CompareTag("Potion")){
             botellas++;
+            botellasN.text = "x " + botellas;
             Destroy(other.gameObject);
         }
     }

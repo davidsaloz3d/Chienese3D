@@ -375,21 +375,25 @@ namespace StarterAssets
 
         public void Drink()
         {
-            if (_hasAnimator)
+            if (Invisible.bebiendo)
             {
-                if (_input.drink)
+                if (_hasAnimator)
                 {
-                    if(Invisible.bebiendo){
+                    if (_input.drink)
+                    {
+
                         _animator.SetTrigger(_animIDDrink);
                         _input.drink = false;
-                    }
-                   
-                }
 
+
+                    }
+
+                }
             }
+
         }
 
-        
+
 
 
         public void TakeDamage()

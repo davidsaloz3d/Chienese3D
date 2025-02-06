@@ -46,7 +46,7 @@ public class AgentControl : MonoBehaviour
 
 
                 distance = Vector3.Distance(transform.position, player.transform.position);
-                if (distance < visionArea && !PlayerHealth.isDead)
+                if (distance < visionArea && !PlayerHealth.isDead && !Invisible.invisible)
                 {
                     agent.destination = player.transform.position;
                     anim.SetBool("Run", true);
