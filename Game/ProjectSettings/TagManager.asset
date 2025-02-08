@@ -12,6 +12,7 @@ TagManager:
   - Flecha
   - Potion
   - Mensajero
+  - Puerta
   layers:
   - Default
   - TransparentFX

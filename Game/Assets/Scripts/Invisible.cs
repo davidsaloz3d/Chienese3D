@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Invisible : MonoBehaviour
@@ -13,6 +14,8 @@ public class Invisible : MonoBehaviour
     [SerializeField] Slider tiempoPocion;
     [SerializeField] TMP_Text botellasN;
     [SerializeField] GameObject panel;
+
+    [SerializeField] GameObject menuPausa;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,6 +26,14 @@ public class Invisible : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                menuPausa.SetActive(true);
+                Time.timeScale = 0;
+            }
+
+            
         Debug.Log("Botellas" + botellas);
         if(!bebiendo && botellas > 0 && !invisible){
             if(Input.GetMouseButton(1)){
@@ -47,6 +58,9 @@ public class Invisible : MonoBehaviour
             }
             Debug.Log("Invisible" + tiempoRestante);
         }
+
+
+        
     }
 
     private void Invoke(string v1, int v2, float v3)
@@ -59,6 +73,10 @@ public class Invisible : MonoBehaviour
             botellas++;
             botellasN.text = "x " + botellas;
             Destroy(other.gameObject);
+        }
+
+        if(other.CompareTag("Puerta") && MesajeController.Llaves == 5){
+            SceneManager.LoadScene("Credits");
         }
     }
 

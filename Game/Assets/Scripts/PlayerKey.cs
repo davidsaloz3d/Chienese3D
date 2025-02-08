@@ -8,6 +8,8 @@ public class PlayerKey : MonoBehaviour
     [SerializeField] GameObject LlaveConseguida;
 
     [SerializeField] GameObject Canva;
+
+    public bool conseguido = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,12 +19,13 @@ public class PlayerKey : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (activado)
+        if (activado && !conseguido)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 LlaveConseguida.SetActive(true);
                 Canva.SetActive(false);
+                conseguido = true;
                 Time.timeScale = 0;
             }
         }
@@ -30,7 +33,7 @@ public class PlayerKey : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Mensajero"))
+        if (other.CompareTag("Player") && !conseguido)
         {
             mensaje.SetActive(true);
             activado = true;
@@ -39,7 +42,7 @@ public class PlayerKey : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Mensajero"))
+        if (other.CompareTag("Player"))
         {
             mensaje.SetActive(false);
             activado = false;
