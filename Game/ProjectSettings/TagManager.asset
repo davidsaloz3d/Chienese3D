@@ -11,6 +11,7 @@ TagManager:
   - Arco
   - Flecha
   - Potion
+  - Mensajero
   layers:
   - Default
   - TransparentFX
