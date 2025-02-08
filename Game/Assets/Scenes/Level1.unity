@@ -14336,8 +14336,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPausa: {fileID: 958261889}
-  volver: {fileID: 1408634411}
-  salir: {fileID: 2025428383}
+  volver1: {fileID: 1408634411}
+  salir1: {fileID: 2025428383}
   volverSelec: 1
 --- !u!114 &958261891
 MonoBehaviour:

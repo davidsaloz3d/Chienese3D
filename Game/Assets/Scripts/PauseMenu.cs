@@ -6,31 +6,34 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] GameObject menuPausa;
 
-    [SerializeField] GameObject volver;
-    [SerializeField] GameObject salir;
+    [SerializeField] GameObject volver1;
+    [SerializeField] GameObject salir1;
 
-    public bool volverSelec = true;
+    public bool volverSelec;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        volverSelec = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             if (volverSelec)
             {
                 Debug.Log("Funciona o no");
-                volver.SetActive(false);
-                salir.SetActive(true);
+                volver1.SetActive(true);
+                salir1.SetActive(false);
+                volverSelec = false;
             }
             else
             {
-                volver.SetActive(true);
-                salir.SetActive(false);
+                Debug.Log("Funciona o si");
+                volver1.SetActive(false);
+                salir1.SetActive(true);
+                volverSelec = true;
             }
         }
 
@@ -50,17 +53,4 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void Resume()
-    {
-        menuPausa.SetActive(false);
-        Debug.Log("Funciona");
-        Time.timeScale = 1;
-    }
-
-    public void Salir()
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene("Menu");
-
-    }
 }
