@@ -545,6 +545,14 @@ MonoBehaviour:
   botellasN: {fileID: 1092343036}
   panel: {fileID: 2094066979}
   menuPausa: {fileID: 958261889}
+--- !u!81 &22714548
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22714525}
+  m_Enabled: 1
 --- !u!1001 &26147452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4742,6 +4750,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 974238578668270704, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 22714547}
+    - targetCorrespondingSourceObject: {fileID: 974238578668270704, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 22714548}
   m_SourcePrefab: {fileID: 100100000, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
 --- !u!4 &283675123 stripped
 Transform:
