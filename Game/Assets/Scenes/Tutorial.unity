@@ -3278,7 +3278,7 @@ MonoBehaviour:
   m5: {fileID: 1181858766}
   m6: {fileID: 642742733}
   m7: {fileID: 2077364498}
-  mensaje: 0
+  mensaje: 1
 --- !u!1 &1181858766
 GameObject:
   m_ObjectHideFlags: 0
