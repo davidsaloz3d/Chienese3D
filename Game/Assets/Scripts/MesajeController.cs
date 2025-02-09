@@ -20,7 +20,7 @@ public class MesajeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             canva.SetActive(true);
             MensajeCanva.SetActive(false);
