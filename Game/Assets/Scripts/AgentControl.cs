@@ -122,9 +122,14 @@ public class AgentControl : MonoBehaviour
                 anim.SetBool("Morido", true);
                 agent.isStopped = true;
                 HaMuerto = true;
+                Invoke("Defuncion", 10);
             }
             Destroy(other.gameObject);
         }
+    }
+
+    void Defuncion(){
+        Destroy(gameObject);
     }
 
     void Vuelta()
