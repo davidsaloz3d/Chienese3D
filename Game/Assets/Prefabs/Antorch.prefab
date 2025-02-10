@@ -89,7 +89,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 2.5244524e-29, z: 0, w: 2.5244632e-29}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 1.285806e-39}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -352,7 +352,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 72751919, guid: 858e79faf6de940498a11b25374053d0, type: 3}
       propertyPath: m_Volume
-      value: 0.4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 72751919, guid: 858e79faf6de940498a11b25374053d0, type: 3}
       propertyPath: MaxDistance

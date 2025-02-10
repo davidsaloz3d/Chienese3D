@@ -269,7 +269,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Unity Technologies, Advance Studios, AndreiCG, Erbeilo3D, Ravibio, A dog's
-    life software, IgniteCoders, Alexander Kotov, C Jackman, Vefects
+    life software, IgniteCoders, Alexander Kotov, C Jackman, Vefects, Leonardo Carvalho,
+    Mixamo,
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -975,7 +976,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 7e039e47a29ad15439ee2c25db10708d, type: 3}
   m_Resource: {fileID: 8300000, guid: 7e039e47a29ad15439ee2c25db10708d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
