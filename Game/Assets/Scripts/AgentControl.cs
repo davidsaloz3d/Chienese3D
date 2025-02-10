@@ -26,6 +26,9 @@ public class AgentControl : MonoBehaviour
     [SerializeField] Collider espada;
     public static float health = 100;
     [SerializeField] float dps = 50;
+
+    AudioSource audioSrc;
+    [SerializeField] AudioClip sHurt;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,6 +37,8 @@ public class AgentControl : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         agent.destination = path[goal].transform.position;
+
+        audioSrc = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -107,6 +112,7 @@ public class AgentControl : MonoBehaviour
         {
             anim.SetTrigger("Auch");
             agent.isStopped = true;
+            audioSrc.PlayOneShot(sHurt);
             health = health - dps;
             Damago = true;
             Invoke("Vuelta", 1);

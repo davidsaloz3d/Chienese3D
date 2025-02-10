@@ -1195,7 +1195,8 @@ PrefabInstance:
       propertyPath: 'm_Bones.Array.data[67]'
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5542111180780342641, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3128949090649374765, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
     - {fileID: 7888303496483045073, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
@@ -1218,6 +1219,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 974238578668270704, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 425419350}
+    - targetCorrespondingSourceObject: {fileID: 974238578668270704, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 425419353}
   m_SourcePrefab: {fileID: 100100000, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
 --- !u!4 &425419347 stripped
 Transform:
@@ -1309,6 +1313,14 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!81 &425419353
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425419348}
+  m_Enabled: 1
 --- !u!1 &430271551
 GameObject:
   m_ObjectHideFlags: 0
@@ -3433,6 +3445,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 203461992527466735, guid: 2a5ac38fad927344db4061142461ccc0, type: 3}
+      propertyPath: MinDistance
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 203461992527466735, guid: 2a5ac38fad927344db4061142461ccc0, type: 3}
       propertyPath: rolloffMode
       value: 0
       objectReference: {fileID: 0}
@@ -3598,7 +3614,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Las pociones azules podr\xE1s acumularlas y beberlas cuando sean necesario
+  m_text: "Las pociones azules podr\xE1s acumularlas y beberlas cuando sea necesario
     pulsando el click derecho del rat\xF3n."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
